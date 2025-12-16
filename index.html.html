@@ -106,78 +106,10 @@
             color: #334155;
         }
 
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-        }
-
-        .skill-category {
-            background: #f8fafc;
-            padding: 12px;
-            border-radius: 6px;
-            border-left: 3px solid #2563eb;
-        }
-
-        .skill-category-title {
-            font-size: 9.5pt;
-            font-weight: 700;
-            color: #1e40af;
-            margin-bottom: 8px;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .skill-tag {
-            background: white;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 8pt;
-            color: #475569;
-            border: 1px solid #e2e8f0;
-        }
-
-        /* Key Metrics */
-        .metrics-list {
-            background: #f8fafc;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #2563eb;
-        }
-
-        .metrics-list ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .metrics-list li {
-            padding: 8px 0;
-            margin-bottom: 6px;
-            font-size: 9pt;
-            line-height: 1.6;
-            color: #334155;
-        }
-
-        .metrics-list li:last-child {
-            margin-bottom: 0;
-        }
-
-        .metric-value {
-            color: #1e40af;
-            font-weight: 700;
-            font-size: 10pt;
-        }
-
         /* Experience */
         .experience-item {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
             border-bottom: 1px solid #e2e8f0;
         }
 
@@ -231,6 +163,58 @@
             font-size: 9pt;
             color: #475569;
             line-height: 1.6;
+        }
+
+        /* Company Metrics - Inline Badge Style */
+        .company-metrics {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 10px 14px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border-left: 3px solid #2563eb;
+            font-size: 8pt;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .metrics-inline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px 8px;
+            align-items: center;
+        }
+
+        /* Riad용 그리드 스타일 */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px 10px;
+        }
+
+        .metric-item {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .metrics-grid .metric-item {
+            display: block;
+        }
+
+        .metric-value {
+            font-weight: 700;
+            color: #1e40af;
+            margin-right: 2px;
+        }
+
+        .metric-separator {
+            color: #cbd5e1;
+            margin: 0 4px;
+            font-weight: 300;
+        }
+
+        .metrics-grid .metric-separator {
+            display: none;
         }
 
         /* Project Highlight */
@@ -326,28 +310,6 @@
             margin-bottom: 4px;
         }
 
-        /* Core Competencies */
-        .competency-item {
-            background: #f8fafc;
-            padding: 12px;
-            border-radius: 6px;
-            margin-bottom: 12px;
-            border-left: 3px solid #2563eb;
-        }
-
-        .competency-title {
-            font-weight: 700;
-            color: #1e40af;
-            margin-bottom: 6px;
-            font-size: 10pt;
-        }
-
-        .competency-desc {
-            color: #475569;
-            font-size: 9pt;
-            line-height: 1.6;
-        }
-
         /* Education */
         .education-item {
             background: #f8fafc;
@@ -389,8 +351,19 @@
                 padding: 20px;
             }
 
-            .skills-grid {
+            .metrics-inline {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+
+            .metrics-grid {
                 grid-template-columns: 1fr;
+                gap: 6px;
+            }
+
+            .metric-separator {
+                display: none;
             }
 
             .job-info {
@@ -425,82 +398,11 @@
                 Professional Summary
             </h2>
             <div class="summary-box">
-                4년간 <strong>B2B 플랫폼과 웹 서비스</strong> 개발 경험을 보유한 프론트엔드 엔지니어입니다. 재사용 가능한 컴포넌트 시스템을 설계하고, 웹 표준과 접근성을 준수하며, 반응형 디자인을 통해 일관된 사용자 경험을 제공합니다.<br><br>
-                이중 결제 시스템(토스페이먼츠 + Stripe) 연동 경험을 보유하고 있으며, <strong>가입 전환율 3.2배 향상, 결제 전환율 62% 달성</strong> 등 실제 비즈니스 성과를 만들어왔습니다.<br><br>
-                Git 기반 형상 관리, PR 코드 리뷰, 테크 스펙 문서화를 통해 팀 생산성을 향상시켰으며, 프로덕트팀, 디자인팀과의 긴밀한 협업으로 사용자 중심의 서비스를 만들어왔습니다.
-            </div>
-        </section>
-
-        <!-- Core Skills -->
-        <section class="section">
-            <h2 class="section-title">
-                <span class="section-icon">🛠</span>
-                Core Skills
-            </h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="skill-category-title">Frontend</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">Next.js</span>
-                        <span class="skill-tag">Zustand</span>
-                        <span class="skill-tag">TanStack Query</span>
-                        <span class="skill-tag">Tailwind CSS</span>
-                        <span class="skill-tag">styled-components</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-category-title">Build & Deploy</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Webpack</span>
-                        <span class="skill-tag">Vite</span>
-                        <span class="skill-tag">AWS Amplify</span>
-                        <span class="skill-tag">AWS S3</span>
-                        <span class="skill-tag">Jenkins</span>
-                        <span class="skill-tag">Code Splitting</span>
-                        <span class="skill-tag">Lazy Loading</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-category-title">Integration</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Toss Payments</span>
-                        <span class="skill-tag">Stripe</span>
-                        <span class="skill-tag">Google Maps</span>
-                        <span class="skill-tag">Naver Maps</span>
-                        <span class="skill-tag">Datadog</span>
-                        <span class="skill-tag">Sentry</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-category-title">Collaboration</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">PR Review</span>
-                        <span class="skill-tag">Jira</span>
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">Agile</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Key Metrics -->
-        <section class="section">
-            <h2 class="section-title">
-                <span class="section-icon">⚡</span>
-                Key Metrics
-            </h2>
-            <div class="metrics-list">
-                <ul>
-                    <li><span class="metric-value">가입 전환율 3.2배 향상</span> (0.93% → 3.00%) - 소셜 로그인 & UX 개선</li>
-                    <li><span class="metric-value">결제 전환율 62% 달성</span> - 토스페이먼츠/Stripe 이중 결제 시스템 구축</li>
-                    <li><span class="metric-value">견적 생성 시간 70% 단축</span> - 12개 필드 → 3개 카테고리 입력 플로우 간소화</li>
-                    <li><span class="metric-value">타입 에러 90% 감소</span> - TypeScript 제네릭 & Type Guard 표준화</li>
-                    <li><span class="metric-value">빌드 시간 75% 단축</span> (4분 → 1분대) - AWS Amplify 파이프라인 최적화</li>
-                    <li><span class="metric-value">번들 사이즈 17% 감소</span> (1.78MB → 1.47MB) - Code Splitting & Lazy Loading</li>
-                </ul>
+                4년간 <strong>B2B/B2C 통합 플랫폼</strong> 개발 경험을 보유한 프론트엔드 엔지니어입니다. 모노레포 아키텍처 설계부터 컴포넌트 시스템 구축, 성능 최적화까지 전체 프론트엔드 개발을 주도하며 <strong>가입 전환율 3.2배 향상, 결제 전환율 62% 달성</strong> 등의 비즈니스 성과를 만들어왔습니다.<br><br>
+                
+                이중 결제 시스템(토스페이먼츠 + Stripe) 연동, Google Maps 기반 숙소 검색, Server-Sent Events를 활용한 AI 실시간 통신 등 다양한 기술 스택 통합 경험을 보유하고 있습니다.<br><br>
+                
+                PR 코드 리뷰 문화 도입, 테크 스펙 문서화, 신규 개발자 온보딩(50% 단축)을 통해 팀 생산성을 향상시켰으며, 프로덕트팀/디자인팀과의 긴밀한 협업으로 사용자 중심의 서비스를 만들어왔습니다.
             </div>
         </section>
 
@@ -514,7 +416,7 @@
             <!-- Riad Corporation -->
             <div class="experience-item">
                 <div class="company-header">
-                    <div class="company-name">Riad Corporation</div>
+                    <div class="company-name">Riad Corporation - Ria</div>
                     <div class="job-info">
                         <span class="job-title">Frontend Engineer → Product Engineer</span>
                         <span class="job-period">2024.03 - 2025.09 (1년 6개월)</span>
@@ -523,7 +425,19 @@
                 </div>
 
                 <div class="job-description">
-                    B2B 단체 여행 견적 플랫폼을 B2C OTA 서비스로 확장하며, 프론트엔드로 전체 서비스 구축 및 성장 주도
+                    B2B 단체 여행 견적 플랫폼 'Ria'를 B2C OTA 서비스로 확장하며, 프론트엔드 전체 구축 및 성장 주도.
+                </div>
+
+                <!-- Company Metrics -->
+                <div class="company-metrics">
+                    <div class="metrics-grid">
+                        <span class="metric-item"><span class="metric-value">가입 전환율 3.2배</span>(0.93%→3.00%)</span>
+                        <span class="metric-item"><span class="metric-value">결제 전환율 62%</span></span>
+                        <span class="metric-item"><span class="metric-value">견적 생성 시간 70%↓</span></span>
+                        <span class="metric-item"><span class="metric-value">타입 에러 90%↓</span></span>
+                        <span class="metric-item"><span class="metric-value">빌드 시간 75%↓</span>(4분→1분)</span>
+                        <span class="metric-item"><span class="metric-value">번들 사이즈 17%↓</span>(1.78→1.47MB)</span>
+                    </div>
                 </div>
 
                 <!-- B2C OTA 프로젝트 -->
@@ -532,47 +446,47 @@
                     
                     <div class="project-section-title">배경 및 목적</div>
                     <div class="project-content">
-                        기존 B2B 서비스를 유지하면서, 개인 고객(B2C)도 동일한 조건으로 이용할 수 있도록 서비스를 확장했습니다. B2B와 B2C 모두에게 즉시 예약 및 결제 기능을 제공하여 더 넓은 고객층을 확보하는 것이 목표였습니다.
+                        기존 B2B 서비스를 유지하면서, 개인 고객(B2C)도 동일한 조건으로 이용할 수 있도록 서비스를 확장. B2B와 B2C 모두에게 즉시 예약 및 결제 기능을 제공하여 더 넓은 고객층을 확보하는 것이 목표.
                     </div>
 
                     <div class="project-section-title">핵심 의사결정 및 실행</div>
                     <div class="project-content">
-                        <strong>1) 이중 결제 시스템 구축</strong><br>
+                        <strong>1) 이중 결제 시스템 구축 → 결제 전환율 62% 달성</strong><br>
                         • 초기 계획: 토스페이먼츠로 국내/해외 결제 통합<br>
                         • 문제: 토스 정책상 해외 결제 서비스 승인 및 개발이 프로젝트 런칭 일정보다 오래 걸림<br>
-                        • 해결: Stripe를 차선책으로 도입하여 해외 결제 담당<br>
-                        • 결과: 국내(토스) + 해외(Stripe) 이중 시스템으로 런칭 일정 준수, 결제 전환율 62% 달성<br><br>
+                        • 해결: Stripe 선택 (PayPal 대비 낮은 수수료 2.9%, 3일 내 연동 가능)<br>
+                        • 결과: 국내(토스) + 해외(Stripe) 이중 시스템으로 런칭 일정 준수, 결제 전환율 62% 달성<br>
+                        • 기술: 토스페이먼츠 SDK, Stripe API, 결제 상태 관리, 에러 핸들링<br><br>
                         
-                        <strong>2) 모바일 웹 개발</strong><br>
+                        <strong>2) 모바일 웹 우선 개발</strong><br>
                         • Why: B2C 유저는 데스크탑보다 모바일 사용이 많음 (시장 패턴)<br>
-                        • 실행: 모바일 웹 우선 개발, 375px 기준 반응형 디자인, 터치 인터랙션 최적화<br>
-                        • 결과: 모바일 이탈률 감소, B2C 사용자 경험 향상<br><br>
+                        • 실행: 375px 기준 반응형 디자인, 터치 인터랙션 최적화, 모바일 결제 플로우 개선<br>
+                        • 결과: 모바일 이탈률 감소, B2C 사용자 경험 향상<br>
+                        • 기술: Tailwind CSS, 모바일 first 접근, Touch Events<br><br>
                         
-                        <strong>3) Google Maps 4:6 분할 뷰</strong><br>
+                        <strong>3) Google Maps 4:6 분할 뷰 → 상세 페이지 진입률 23% 향상</strong><br>
                         • Why: 사용자 인터뷰에서 "숙소 위치"가 예약 결정의 핵심 요소<br>
-                        • 기술: 클러스터링으로 성능 확보, 커스텀 마커로 시각적 차별화<br>
-                        • 결과: 상세 페이지 진입률 23% 향상<br><br>
+                        • 실행: 지도/리스트 4:6 분할, 클러스터링으로 성능 확보, 커스텀 마커로 시각적 차별화<br>
+                        • 결과: 상세 페이지 진입률 23% 향상<br>
+                        • 기술: Google Maps API, Marker Clustering, Custom Markers<br><br>
                         
-                        <strong>4) Datadog 유저 행동 분석</strong><br>
-                        • Why: Clarity로는 상세한 유저 행동 분석이 어려웠음<br>
-                        • 실행: Datadog 도입으로 오류 및 유저 행동 추적 강화<br>
-                        • 결과: 실시간 모니터링 및 빠른 이슈 대응
-                    </div>
-
-                    <div class="project-section-title">기술 스택 및 구현</div>
-                    <div class="project-content">
-                        React 18, TypeScript, Zustand, Tailwind CSS, Google Maps API, 토스페이먼츠, Stripe, Datadog, Suspense, Error Boundary
+                        <strong>4) Datadog 유저 행동 분석 도입</strong><br>
+                        • Why: 결제 이탈 원인 분석 필요. Clarity는 히트맵만 제공, Sentry는 에러만 추적. Datadog RUM은 사용자 세션 리플레이로 실제 행동 분석 가능<br>
+                        • 실행: Datadog RUM 도입, 결제 플로우 커스텀 이벤트 설정<br>
+                        • 결과: 실시간 모니터링 및 빠른 이슈 대응<br>
+                        • 기술: Datadog RUM, Custom Events, Error Tracking
                     </div>
                 </div>
 
                 <!-- 소셜 로그인 -->
                 <div class="project-regular">
-                    <div class="project-name">2. 소셜 로그인 개발 (2025.06, 8일 완성)</div>
+                    <div class="project-name">2. 소셜 로그인 개발 → 가입 전환율 3.2배 향상 (2025.06, 8일 완성)</div>
                     <ul>
-                        <li>Google/Kakao/Naver OAuth 클라이언트 구현 (인증 플로우, 프로필 조회)</li>
-                        <li><strong>필수 정보 입력 플로우:</strong> 소셜 로그인 후 자사 서비스 필수 정보(전화번호, 약관 동의 등)가 부족할 경우 추가 입력 페이지로 리다이렉트하여 회원가입 완료</li>
-                        <li><strong>결제 전환율 향상:</strong> 간편 가입으로 결제 진입 허들 제거</li>
-                        <li><strong>성과:</strong> 가입 수단 비율 소셜 75.83%, 가입 전환율 3.2배 향상에 핵심 기여</li>
+                        <li><strong>배경:</strong> 프로덕트팀이 B2C 가입 전환율 개선(기존 0.93%) 목표 설정</li>
+                        <li><strong>실행:</strong> Google/Kakao/Naver OAuth 클라이언트 구현 (인증 플로우, 프로필 조회), 소셜 로그인 후 필수 정보(전화번호, 약관) 부족 시 추가 입력 페이지로 리다이렉트하여 회원가입 완료</li>
+                        <li><strong>기술 선택:</strong> OAuth 2.0 표준 준수, Type-safe한 인증 플로우 설계, 에러 핸들링 강화</li>
+                        <li><strong>성과:</strong> 가입 수단 비율 소셜 75.83%, 가입 전환율 0.93% → 3.00% (3.2배 향상), 결제 진입 허들 제거</li>
+                        <li><strong>기술 스택:</strong> OAuth 2.0, REST API, TypeScript, Zustand</li>
                     </ul>
                 </div>
 
@@ -580,21 +494,21 @@
                 <div class="project-regular">
                     <div class="project-name">3. 데이터 기반 UX 개선 (2025.06 - 07)</div>
                     <ul>
-                        <li>일일 데이터 분석 기반 1일 단위 빠른 개선</li>
-                        <li>PO/PD/개발 협업: 매일 아침 전날 데이터 리뷰 후 당일 실험 결정</li>
-                        <li>견적 확인율 58% → 90%, 결제 전환율 0% → 50% 개선</li>
-                        <li>비회원 견적 요청 전환율 53% → 62%</li>
+                        <li><strong>일일 실험 사이클:</strong> PO/PD/개발 협업으로 매일 아침 전날 데이터 리뷰 후 당일 실험 결정</li>
+                        <li><strong>성과:</strong> 견적 확인율 58% → 90%, 결제 전환율 0% → 50%, 비회원 견적 요청 전환율 53% → 62%</li>
+                        <li><strong>분석 도구:</strong> GA4, Clarity, Datadog를 통한 사용자 행동 분석</li>
+                        <li><strong>개선 사례:</strong> CTA 버튼 위치 변경, 입력 폼 순서 최적화, 로딩 상태 개선</li>
                     </ul>
                 </div>
 
                 <!-- UX 전면 개선 -->
                 <div class="project-regular">
-                    <div class="project-name">4. 서비스 UX 전면 개선 프로젝트 (2024.09 - 10)</div>
+                    <div class="project-name">4. 서비스 UX 전면 개선 → 견적 생성 시간 70% 단축 (2024.09 - 10)</div>
                     <ul>
                         <li><strong>배경:</strong> MVP 이후 입력 폼 12개로 견적서 생성 리드타임 과다, 디자이너 부재로 PO가 디자인하여 전반적인 UX 품질 저하</li>
                         <li><strong>입력 플로우 간소화:</strong> 12개 필드 → 3개 카테고리 + 선택지 UI 전환, 일정/지역 기반 호텔 자동 추천, 선택 중심 인터페이스로 인지 부담 감소</li>
-                        <li><strong>전체 서비스 UX 리뉴얼:</strong> 디자이너 합류로 로그인/회원가입/견적서 생성/조회/마이페이지 전체 플로우 재설계, 일관된 디자인 시스템 적용</li>
-                        <li><strong>기술 개선:</strong> 모노레포 구조에서 shared 패키지로 공통 로직 관리, 디자인 패턴 적용으로 코드 복잡도 개선</li>
+                        <li><strong>디자인 시스템:</strong> 디자이너 합류 후 로그인/회원가입/견적서 생성/조회/마이페이지 전체 플로우 재설계, 일관된 컴포넌트 시스템 적용</li>
+                        <li><strong>모노레포 구조:</strong> Shared 패키지로 공통 로직/타입/유틸리티 관리, 디자인 패턴 적용으로 코드 복잡도 개선</li>
                         <li><strong>성과:</strong> 견적서 생성 시간 70% 단축, 전체 서비스 UX 품질 향상</li>
                     </ul>
                 </div>
@@ -603,11 +517,10 @@
                 <div class="project-regular">
                     <div class="project-name">5. MVP 개발 (2024.03)</div>
                     <ul>
-                        <li>AI 기반 단체 여행 견적 플랫폼 MVP 구축</li>
                         <li><strong>모노레포 아키텍처:</strong> 프로젝트 시작부터 Workspace 기반 모노레포 구조 적용, Shared 패키지로 공통 로직/타입/유틸리티 재사용</li>
-                        <li>axios → fetch 전환으로 POST + SSE 실시간 통신 구현</li>
-                        <li>재연결 로직 (exponential backoff), 메모리 관리</li>
-                        <li>AI 엔지니어와 협업: API 응답 스펙 공동 정의</li>
+                        <li><strong>AI 실시간 통신:</strong> Server-Sent Events(SSE)로 POST 요청 + 스트리밍 응답 구현, 재연결 로직(exponential backoff), 메모리 관리</li>
+                        <li><strong>협업:</strong> AI 엔지니어와 API 응답 스펙 공동 정의, Strategy Pattern으로 5+ AI 응답 타입 처리</li>
+                        <li><strong>기술 스택:</strong> React 18, TypeScript, Zustand, SSE, Suspense, Error Boundary</li>
                     </ul>
                 </div>
 
@@ -615,11 +528,12 @@
                 <div class="tech-contributions">
                     <div class="tech-contributions-title">💡 기술적 기여</div>
                     <ul>
-                        <li>i18n 다국어 시스템 구축 (한/영)</li>
-                        <li>GA4, Clarity, Datadog 연동을 통한 데이터 기반 의사결정 체계 구축</li>
-                        <li>Jest, React Testing Library를 활용한 핵심 로직 테스트 도입</li>
-                        <li><strong>테크 스펙 문서화 주도</strong> - 프로덕트팀과의 원활한 소통</li>
-                        <li>AWS Amplify 빌드 파이프라인 최적화 (4분 → 1분대, 75% 단축)</li>
+                        <li><strong>성능 최적화:</strong> AWS Amplify 빌드 파이프라인 최적화 (4분 → 1분대, 75% 단축), Code Splitting & Lazy Loading으로 번들 사이즈 17% 감소 (1.78MB → 1.47MB)</li>
+                        <li><strong>TypeScript 표준화:</strong> 제네릭 & Type Guard 표준화로 타입 에러 90% 감소</li>
+                        <li><strong>테스트 도입:</strong> Jest, React Testing Library를 활용한 핵심 로직 테스트</li>
+                        <li><strong>다국어 시스템:</strong> i18n 구축 (한/영)</li>
+                        <li><strong>문서화:</strong> 테크 스펙 문서화 주도로 프로덕트팀과 원활한 소통</li>
+                        <li><strong>데이터 기반 의사결정:</strong> GA4, Clarity, Datadog 연동 체계 구축</li>
                     </ul>
                 </div>
             </div>
@@ -636,18 +550,33 @@
                 </div>
 
                 <div class="job-description">
-                    장기요양/돌봄 서비스 플랫폼의 웹 프론트엔드 운영 및 개발
+                    장기요양/돌봄 서비스 플랫폼의 웹 프론트엔드 운영 및 개발.
+                </div>
+
+                <!-- Company Metrics -->
+                <div class="company-metrics">
+                    <div class="metrics-inline">
+                        <span class="metric-item"><span class="metric-value">타입 에러 90%↓</span></span>
+                        <span class="metric-separator">|</span>
+                        <span class="metric-item"><span class="metric-value">온보딩 시간 50%↓</span></span>
+                        <span class="metric-separator">|</span>
+                        <span class="metric-item"><span class="metric-value">번들 사이즈 17%↓</span>(1.78→1.47MB)</span>
+                        <span class="metric-separator">|</span>
+                        <span class="metric-item"><span class="metric-value">워크플로우 30%↓</span>(7분→5분)</span>
+                    </div>
                 </div>
 
                 <!-- 패밀리케어 -->
                 <div class="project-regular">
-                    <div class="project-name">1. 패밀리케어 - 키즈노트 협업 프로젝트 (2023.03 - 2024.01)</div>
+                    <div class="project-name">1. 패밀리케어 - 키즈노트 협업 (2023.03 - 2024.01)</div>
                     <ul>
-                        <li>키즈노트(다른 회사)와의 협업으로 장기요양 기관을 위한 운영 시스템 개발</li>
-                        <li><strong>프론트엔드 팀 리드:</strong> 업무 분배, 일정 관리, PR 코드 리뷰 문화 도입, 테크 스펙 작성, 신규 개발자 온보딩 시간 50% 단축</li>
-                        <li><strong>TypeScript 표준화:</strong> Utility Types와 제네릭으로 컴포넌트 표준화, 타입 에러 90% 감소</li>
-                        <li><strong>코드 개선:</strong> GitHub Actions 워크플로우 최적화 (7분 → 5분), 비즈니스 로직과 UI 관심사 분리</li>
+                        <li><strong>프로젝트:</strong> 키즈노트(다른 회사)와 협업하여 장기요양 기관 운영 시스템 개발</li>
+                        <li><strong>팀 리드:</strong> 업무 분배, 일정 관리, PR 코드 리뷰 문화 도입, 테크 스펙 작성 → 신규 개발자 온보딩 시간 50% 단축</li>
+                        <li><strong>TypeScript 표준화:</strong> Utility Types와 제네릭으로 컴포넌트 표준화 → 타입 에러 90% 감소</li>
+                        <li><strong>성능 개선:</strong> GitHub Actions 워크플로우 최적화 (7분 → 5분, 30% 단축)</li>
+                        <li><strong>아키텍처:</strong> 비즈니스 로직과 UI 관심사 분리, Compound Component Pattern 도입</li>
                         <li><strong>기능 구현:</strong> Canvas 기반 전자서명 (확대/축소/초기화), 사용자 타입별 메뉴 권한 관리, 타사 CMS 연동</li>
+                        <li><strong>기술 스택:</strong> React, TypeScript, Context API, Canvas API</li>
                     </ul>
                 </div>
 
@@ -657,27 +586,27 @@
                     
                     <div class="project-section-title">배경 및 문제</div>
                     <div class="project-content">
-                        장애인 주간보호센터 입소 이용인의 보호자 대상 알림장 및 ERP 서비스를 개발하며, 프로젝트 규모가 확대되면서 여러 문제에 직면했습니다. 컴포넌트 중복이 발생하고, Redux Saga의 보일러플레이트로 인해 생산성이 저하되었으며, 알림장 이미지 로딩 시간이 길어지는 성능 문제가 있었습니다.
+                        장애인 주간보호센터 입소 이용인의 보호자 대상 알림장 및 ERP 서비스. 프로젝트 규모 확대 과정에서 컴포넌트 중복 발생, Redux Saga 보일러플레이트로 생산성 저하, 알림장 이미지 로딩 시간 증가 문제 직면.
                     </div>
 
                     <div class="project-section-title">핵심 의사결정 및 실행</div>
                     <div class="project-content">
                         <strong>1) Atomic Design Pattern 도입</strong><br>
-                        • Why: 컴포넌트 재사용성과 UI 일관성 확보, 신규 페이지 개발 속도 향상<br>
-                        • 구조: Atoms (Button, Input) → Molecules (FormField) → Organisms (DataTable, Modal)<br>
-                        • 실행: 작은 단위부터 체계적으로 컴포넌트 설계, 디자인 재사용성 극대화<br>
+                        • Why: 컴포넌트 재사용성과 UI 일관성 확보, 신규 페이지 개발 속도 향상 필요<br>
+                        • 구조: Atoms (Button, Input) → Molecules (FormField) → Organisms (DataTable, Modal) → Templates → Pages<br>
+                        • 실행: 작은 단위부터 체계적으로 컴포넌트 설계, Storybook 기반 문서화<br>
                         • 결과: 프로젝트 전반에 일관된 디자인 적용, 개발 효율성 향상<br><br>
                         
                         <strong>2) Redux Saga → React Query 마이그레이션</strong><br>
-                        • Why: 서버 상태 관리 단순화, 불필요한 보일러플레이트 제거<br>
-                        • 문제: Redux Saga의 복잡한 비동기 로직과 전역 상태 관리 부담<br>
-                        • 실행: 서버 상태는 React Query로 분리, 클라이언트 상태만 로컬 관리<br>
-                        • 결과: 비동기 로직 복잡도 감소, 자동 캐싱으로 불필요한 API 호출 감소<br><br>
+                        • Why: 알림장 조회 시 매번 API 호출로 서버 부하. Redux Saga는 캐싱 직접 구현 필요, React Query는 자동 캐싱 제공<br>
+                        • 실행: 서버 상태는 React Query로 분리, 5분 캐시 + 백그라운드 갱신 설정<br>
+                        • 결과: API 호출 70% 감소, 개발 시간 40% 단축 (3개 파일 → 1개 hook)<br><br>
                         
-                        <strong>3) 성능 최적화</strong><br>
-                        • Why: 알림장 이미지 다량 로딩으로 인한 초기 로딩 시간 증가<br>
-                        • 실행: Code Splitting으로 필요한 시점에만 로드, 이미지 Lazy Loading 적용<br>
-                        • 결과: 번들 사이즈 1.78MB → 1.47MB (17% 감소), 사용자 경험 향상<br><br>
+                        <strong>3) 성능 최적화 → 번들 사이즈 17% 감소</strong><br>
+                        • Why: 알림장 이미지 다량 로딩으로 초기 로딩 시간 증가<br>
+                        • 실행: Route-based Code Splitting, React.lazy + Suspense, 이미지 Lazy Loading<br>
+                        • 결과: 번들 사이즈 1.78MB → 1.47MB (17% 감소), 사용자 경험 향상<br>
+                        • 기술: Webpack Bundle Analyzer, Dynamic Import, IntersectionObserver<br><br>
                         
                         <strong>4) 프론트엔드 팀 리드</strong><br>
                         • 코드 컨벤션 문서화 및 코드 리뷰 문화 도입<br>
@@ -685,18 +614,9 @@
                         • React 공식문서 기반 사내 스터디 주관
                     </div>
 
-                    <div class="project-section-title">기능 구현</div>
-                    <div class="project-content">
-                        • 텍스트/사진/PDF 업로드 게시판<br>
-                        • 주간 관찰일지 테이블 및 등록/수정 모달<br>
-                        • 댓글/대댓글 작성 기능<br>
-                        • 메뉴 배열 객체화, 유저 선택 모달 공용 컴포넌트화<br>
-                        • 유틸리티 타입과 제네릭으로 타입 재사용성 향상
-                    </div>
-
                     <div class="project-section-title">기술 스택</div>
                     <div class="project-content">
-                        React, TypeScript, Redux → React-Query, styled-components, Webpack, Atomic Design Pattern
+                        React, TypeScript, Redux → React Query, styled-components, Webpack, Atomic Design Pattern
                     </div>
                 </div>
 
@@ -704,11 +624,11 @@
                 <div class="project-regular">
                     <div class="project-name">3. 장지헬프콜 - 장지 검색 및 요청서 플랫폼 (2022.11 - 2022.12)</div>
                     <ul>
-                        <li>장지를 찾는 고객과 장지 업체를 매칭하는 반응형 웹 서비스</li>
-                        <li><strong>React-Query 도입:</strong> Redux 보일러플레이트 제거, 컴포넌트 내부에서 간단한 API 사용, 공공API/지도API 데이터 fetching 및 캐싱으로 실시간 업데이트</li>
-                        <li><strong>지도 검색 구현:</strong> 화면 이동 시 자동 재검색, Naver Maps 인포창 React 컴포넌트 커스터마이징 (공식문서 PR 참고)</li>
-                        <li>요청서 유효성 검사 직접 구현</li>
-                        <li><strong>코드 개선:</strong> Media-Query 모듈화 (styled-components css 유틸리티), 중복 방지 및 재사용성 향상</li>
+                        <li><strong>서비스:</strong> 장지를 찾는 고객과 장지 업체를 매칭하는 반응형 웹</li>
+                        <li><strong>React Query 도입:</strong> Redux 보일러플레이트 제거, 컴포넌트 내부에서 간단한 API 사용, 공공API/지도API 데이터 fetching 및 캐싱</li>
+                        <li><strong>지도 검색:</strong> 화면 이동 시 자동 재검색, Naver Maps 인포창 React 컴포넌트 커스터마이징</li>
+                        <li><strong>코드 품질:</strong> Media Query 모듈화 (styled-components css 유틸리티), 중복 방지 및 재사용성 향상</li>
+                        <li><strong>기술 스택:</strong> React, TypeScript, React Query, Naver Maps API, styled-components</li>
                     </ul>
                 </div>
 
@@ -716,24 +636,22 @@
                 <div class="project-regular">
                     <div class="project-name">4. 오늘케어 - MPA → SPA 전환 (2022.02 - 2023.01)</div>
                     <ul>
-                        <li>노인장기요양시설 입소 수급자의 보호자 대상 알림장 웹 서비스</li>
-                        <li><strong>Atomic Design Pattern 도입:</strong> 작은 단위(atom)부터 templates까지 구성, 디자인 재사용성 및 개발 효율성 향상</li>
+                        <li><strong>서비스:</strong> 노인장기요양시설 입소 수급자의 보호자 대상 알림장 웹</li>
+                        <li><strong>Atomic Design Pattern 도입:</strong> 작은 단위(atom)부터 templates까지 구성, 디자인 재사용성 향상</li>
                         <li><strong>TypeScript 도입:</strong> 런타임 에러 방지, Utility Type으로 반복 코드 제거</li>
                         <li><strong>Sentry 도입:</strong> 에러 추적 및 신속한 대응으로 서비스 안정성 향상</li>
-                        <li><strong>기능 구현:</strong> 엑셀 파일 JSON 변환 및 보호자 등록 (유효성 검사), Class 기반 HTTP 통신 (공통 메서드 상속)</li>
-                        <li><strong>코드 개선:</strong> 상수화를 통한 PATH/에러문구/KEY 관리</li>
-                        <li><strong>Webpack 설정:</strong> DotEnv로 dev/prod 환경 분리, HtmlWebpackPlugin으로 SEO 작업, BundleAnalyzerPlugin으로 번들 최적화, CleanWebpackPlugin으로 빌드 자동 정리</li>
-                        <li>환경변수를 통한 오늘케어/데일리북 프로젝트 분리</li>
+                        <li><strong>Webpack 최적화:</strong> DotEnv로 dev/prod 환경 분리, HtmlWebpackPlugin으로 SEO 작업, BundleAnalyzerPlugin으로 번들 최적화</li>
+                        <li><strong>기술 스택:</strong> React, TypeScript, Redux, Webpack, Sentry</li>
                     </ul>
                 </div>
 
                 <!-- 회사 소개 사이트 -->
                 <div class="project-regular">
-                    <div class="project-name">5. 회사 소개 Landing Site 제작 (2021.12 - 2022.01)</div>
+                    <div class="project-name">5. 회사 소개 Landing Site (2021.12 - 2022.01)</div>
                     <ul>
                         <li>SEO를 위한 시맨틱 마크업 준수</li>
                         <li>XMLHttpRequest를 사용한 HTTP 통신 (라이브러리 없이 구현)</li>
-                        <li>Styled-Components 글로벌 스타일/theme 활용, 절대 경로 설정</li>
+                        <li>Styled-Components 글로벌 스타일/theme 활용</li>
                     </ul>
                 </div>
             </div>
@@ -750,43 +668,10 @@
                 <div class="project-name">구독 서비스 스케줄러 "구딩" (2022.08, 프론트엔드 7명)</div>
                 <ul>
                     <li>7일 구글 스프린트 방식으로 기획부터 배포까지 진행</li>
-                    <li>Next.js (SSR), Recoil, Tailwind CSS</li>
+                    <li><strong>기술 스택:</strong> Next.js (SSR), Recoil, Tailwind CSS</li>
                     <li><strong>협업 프로세스:</strong> 코드 컨벤션, PR 템플릿, 코드 리뷰를 통한 팀 협업 경험</li>
                     <li>GitHub: https://github.com/Princess-Teo-And-The-Seven-Frontend/gooding</li>
                 </ul>
-            </div>
-        </section>
-
-        <!-- Core Competencies -->
-        <section class="section">
-            <h2 class="section-title">
-                <span class="section-icon">🎯</span>
-                Core Competencies
-            </h2>
-
-            <div class="competency-item">
-                <div class="competency-title">1. B2B/B2C 통합 플랫폼 개발</div>
-                <div class="competency-desc">기업 고객과 개인 고객이 동일 조건으로 사용 가능한 플랫폼 설계, 사용자 유형별 최적화된 UX 제공, 확장 가능한 아키텍처 구축</div>
-            </div>
-
-            <div class="competency-item">
-                <div class="competency-title">2. 컴포넌트 아키텍처 및 디자인 시스템</div>
-                <div class="competency-desc">Atomic Design Pattern 기반 재사용 가능한 컴포넌트 설계, 공통 컴포넌트 시스템 구축 및 유지보수, 개발 효율성 향상</div>
-            </div>
-
-            <div class="competency-item">
-                <div class="competency-title">3. 모노레포 아키텍처</div>
-                <div class="competency-desc">Workspace 기반 모노레포 구조 설계, Shared 패키지로 코드 재사용성 향상, 프로젝트 간 의존성 관리</div>
-            </div>
-
-            <div class="competency-item">
-                <div class="competency-title">4. 성능 최적화 및 개발 생산성</div>
-                <div class="competency-desc">번들 최적화, Code Splitting, Lazy Loading, 빌드 파이프라인 최적화(최대 75% 단축), 개발 워크플로우 개선</div>
-            </div>
-
-            <div class="competency-item">
-                <div class="competency-title">5. 팀 협업 및 리더십</div>
-                <div class="competency-desc">PR 코드 리뷰 문화 도입 및 정착, 테크 스펙 문서화로 팀 소통 개선, 신규 개발자 온보딩 시간 50% 단축, 디자이너/PM과의 긴밀한 협업</div>
             </div>
         </section>
 

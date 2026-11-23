@@ -1,0 +1,462 @@
+{
+  "name": {
+    "ko": "김태현",
+    "en": "Taehyun Kim"
+  },
+  "role": "Frontend Engineer",
+  "email": "taehyun_fe@naver.com",
+  "github": "https://github.com/qlemql",
+  "summary": {
+    "ko": "React·TypeScript를 중심으로 예약·결제 서비스와 매장용 웹뷰를 개발해 왔습니다. 여러 서비스가 연결된 환경에서 코드와 운영 로그로 오류의 원인을 찾고, 관련 팀과 해결 방법을 정해 개선합니다. 티오더에서는 주문 태블릿과 광고 모듈의 연동, 팀 AI 도구와 업무 이력 검색 봇을 개발했습니다. 기능에 필요한 API와 DB까지 구현하며 담당 범위를 넓히고 있습니다.",
+    "en": "Frontend engineer building booking, payment, and store-management products with React and TypeScript. I trace problems across connected services through code and production logs, then work with the responsible teams to resolve them. At T-order, I have developed order-tablet and advertising integrations, shared AI tools, and a bot for searching team work history. I also implement the APIs and database changes needed to deliver features."
+  },
+  "experience": [
+    {
+      "company": {
+        "ko": "티오더",
+        "en": "T-order"
+      },
+      "period": {
+        "ko": "2026.03 - 재직 중",
+        "en": "Mar 2026 - Present"
+      },
+      "role": {
+        "ko": "Frontend Engineer",
+        "en": "Frontend Engineer"
+      },
+      "meta": {
+        "ko": "광고플랫폼팀 → 프론트엔드 챕터",
+        "en": "Ad Platform team → Frontend Chapter"
+      },
+      "summary": {
+        "ko": "음식점 주문 태블릿 서비스에서 광고 어드민을 운영하고, 사장님용 React 웹뷰와 Vue 주문 앱·React 광고 모듈의 연동을 개발했습니다. 운영 문제 개선과 팀 개발 도구를 맡았으며, 2026년 11월부터 사내 신규 주문 서비스 개발에도 참여하고 있습니다.",
+        "en": "At a restaurant table-ordering platform, I worked on the ad admin, an owner-facing React webview, and the integration between the Vue ordering app and React advertising module. My work also covers production issues and team tooling. Since November 2026, I have also been developing a new internal ordering product."
+      },
+      "projects": [
+        {
+          "title": {
+            "ko": "주문·광고 모듈의 통신 오류와 노출 조건 개선",
+            "en": "Order and advertising integration"
+          },
+          "context": {
+            "ko": "Vue 주문 앱 안의 React 광고 모듈이 준비되기 전에 메뉴판을 덮어 터치를 막고, 광고 간 상태 처리 오류로 다음 송출이 누락되는 문제가 있었습니다.",
+            "en": "A React advertising module inside the Vue ordering app could block menu interaction before it was ready. State handling between ads could also cause the next ad to be skipped."
+          },
+          "work": {
+            "ko": [
+              "iframe 생성과 노출을 분리하고 준비 완료 신호(ACK)를 받은 뒤 표시하도록 수정했습니다. 응답 시간 초과와 늦게 도착하는 ACK를 처리하고, 이전 광고 종료와 다음 응답 대기 상태를 분리해 회귀 테스트를 추가했습니다.",
+              "Vue 반응형 객체의 postMessage 전송 실패는 공통 송신 함수에서 일반 객체로 변환해 해결했습니다. PM과 선·후결제 광고 노출 조건을 정리하고 결제 중 새로고침과 장바구니 위 광고 노출을 막았습니다."
+            ],
+            "en": [
+              "Separated iframe creation from display, showing ads only after a ready acknowledgement (ACK). Handled timeouts and late ACKs, and separated the previous ad’s closing state from the next pending response, with regression tests.",
+              "Fixed postMessage failures by converting Vue reactive objects to plain objects in the shared sender. Agreed on prepaid and postpaid ad-display rules with the PM, preventing reloads during payment and ads over the cart."
+            ]
+          },
+          "result": {
+            "ko": "주문 앱 측 구현과 QA를 맡아 운영에 배포했습니다. POS 첫 응답의 p99가 95초인 로그를 근거로 접수 대기를 60초에서 최대 5분으로 조정했습니다.",
+            "en": "Owned the ordering-app implementation and QA through production release. Based on a 95-second p99 first POS response, adjusted the acceptance wait from 60 seconds to at most five minutes."
+          }
+        },
+        {
+          "title": {
+            "ko": "사장님용 React 웹뷰 신규 개발",
+            "en": "Owner-facing React webview"
+          },
+          "context": {
+            "ko": "카카오톡 챗봇의 매장 검색·매출보고서 신청을 웹뷰로 확장하는 과제에서 프론트엔드 개발을 전담했습니다.",
+            "en": "Owned frontend development for extending store search and sales-report requests from a KakaoTalk chatbot into a webview."
+          },
+          "work": {
+            "ko": [
+              "기능별 백엔드 인증 방식을 조사하고 담당 개발자와 구조를 협의했습니다. 토큰은 서버에서 관리하고 웹뷰는 공통 API 클라이언트로 세션 ID를 전달하도록 구현했습니다.",
+              "React·TypeScript·TanStack Query로 검색·보고서 신청·캠페인별 매장 선택을 개발했습니다. MSW로 API 없이 화면을 확인했습니다. 한글 입력 중 중복 제출을 방지하고 외부 진입 URL을 검증했습니다."
+            ],
+            "en": [
+              "Investigated authentication across the backends and agreed on a shared design with their developers. Kept tokens on the server and passed a session ID through the webview’s shared API client.",
+              "Built search, report requests, and campaign-specific store selection with React, TypeScript, and TanStack Query. Used MSW to check screens without live APIs, prevented duplicate submissions during Korean IME input, and validated external entry URLs."
+            ]
+          },
+          "result": {
+            "ko": "매장 검색·보고서 신청을 출시하고, 캠페인 링크로 들어온 사장님이 참여할 매장을 선택하도록 확장했습니다.",
+            "en": "Shipped store search and report requests, then added store selection for owners entering through campaign links."
+          }
+        },
+        {
+          "title": {
+            "ko": "주문 조회 급증의 원인 분석과 운영 정책 개선 제안",
+            "en": "Tracing repeated order queries"
+          },
+          "context": {
+            "ko": "매장 태블릿에서 주문 조회 요청이 반복적으로 급증하는 문제를 조사했습니다.",
+            "en": "Investigated repeated spikes in order-query requests from store tablets."
+          },
+          "work": {
+            "ko": [
+              "AI로 OpenSearch 로그를 분석해 약 41초의 반복 간격을 찾고 주문 앱·광고 모듈의 코드와 매장 설정을 대조했습니다. 30초 유휴 타이머와 10초 기본 이미지 재생이 반복되는 구조를 확인했습니다.",
+              "광고팀과 운영 정책을 검토하고 기본 이미지 대신 기존 뉴스 콘텐츠를 계속 재생하는 방안을 제안했습니다. 광고팀이 두 매장에 적용한 뒤 같은 요일의 로그를 비교했습니다."
+            ],
+            "en": [
+              "Used AI to analyze OpenSearch logs, identified a roughly 41-second interval, and checked both codebases and store settings. Traced the loop to a 30-second idle timer and a 10-second default image.",
+              "Reviewed the operating policy with the advertising team and proposed continuously playing existing news content instead of the default image. After the team applied the change to two stores, compared logs for matching weekdays."
+            ]
+          },
+          "result": {
+            "ko": "두 매장의 같은 일요일 조회 합계가 40,148건에서 3,724건으로 90.7% 줄었습니다.",
+            "en": "Matching-Sunday query totals across the two stores fell from 40,148 to 3,724, a 90.7% reduction."
+          }
+        },
+        {
+          "title": {
+            "ko": "업무 이력을 검색해 답하는 Slack 봇 개발·운영",
+            "en": "Slack bot for team work history"
+          },
+          "context": {
+            "ko": "Confluence·Jira·Git에 흩어진 업무 문서를 찾아 답하는 Python Slack 봇을 혼자 기획·개발·운영했습니다. 사용자는 프론트엔드팀 5명입니다.",
+            "en": "Planned, built, and operated a Python Slack bot that answers questions using work records in Confluence, Jira, and Git. It is used by five frontend team members."
+          },
+          "work": {
+            "ko": [
+              "AI 코딩 도구를 활용해 구현하고, 주제별 문서 후보를 BM25로 좁힌 뒤 LLM이 관련 문서를 골라 근거를 바탕으로 답하는 흐름을 설계했습니다.",
+              "사용자 피드백에서 다른 제품의 배포 이력이 답변에 섞이는 문제를 찾아 수정했습니다. 선결제 질문에 필요한 주문·매장 관리·결제 시스템 문서가 함께 검색되도록 규칙을 보완했습니다."
+            ],
+            "en": [
+              "Implemented the bot with AI coding tools and designed a retrieval flow that narrows topic-based candidates with BM25, then lets an LLM select relevant documents and answer from those sources.",
+              "Fixed answers that mixed in deployment history from another product, based on user feedback. Adjusted retrieval rules so prepaid-payment questions search the necessary ordering, store-management, and payment documents together."
+            ]
+          },
+          "result": {
+            "ko": "등록 문서를 143개에서 261개로 늘리고 검색 후보 수를 조정해 누락 여부를 확인했습니다. 연결 복구와 문서 읽기 실패 알림을 추가하고 실제 질문으로 개선 결과를 검증했습니다.",
+            "en": "Expanded registered documents from 143 to 261, adjusted candidate counts, and checked for retrieval misses. Added connection recovery and document-read failure alerts, validating changes with real questions."
+          }
+        },
+        {
+          "title": {
+            "ko": "팀 AI 도구와 릴리스 검증 개선",
+            "en": "Shared AI tools and release checks"
+          },
+          "context": {
+            "ko": "개인 작업에 쓰던 리뷰·배포·문서 점검 도구를 팀이 함께 사용할 수 있도록 정리했습니다.",
+            "en": "Turned personal review, release, and documentation-check tools into tools the team could share."
+          },
+          "work": {
+            "ko": [
+              "Claude Code 스킬을 팀 플러그인으로 배포하고 저장소별 명령·브랜치를 설정으로 분리했습니다. 설정·버전 오류와 민감 정보 포함 여부를 검사하는 CI를 구성했습니다.",
+              "두 저장소의 개발 지침을 실제 코드와 대조해 갱신했습니다. 배포 여부를 잘못 판단하는 문제는 배포 로그·태그·코드·문서를 대조하도록 고쳤습니다. 동료 코드를 리뷰하다 발견한 중복 거래 생성 가능 경로도 직접 수정했습니다."
+            ],
+            "en": [
+              "Distributed Claude Code skills as a team plugin, separating repository-specific commands and branches into configuration. Added CI checks for configuration and version errors and sensitive content.",
+              "Updated development guidelines in two repositories against the code. Improved deployment checks by cross-checking logs, tags, code, and documentation. Also directly fixed a potential duplicate-transaction path found while reviewing a teammate’s code."
+            ]
+          },
+          "result": {
+            "ko": "직접 만든 배포 스킬을 정기 릴리스 2회와 핫픽스 1회에 사용했습니다. 광고 어드민의 릴리스 과정에는 lint·타입·빌드 검사를 추가했습니다.",
+            "en": "Used the release skill for two regular releases and one hotfix, and added lint, type, and build checks to the ad admin’s release process."
+          }
+        },
+        {
+          "title": {
+            "ko": "신규 주문 서비스의 화면·API·DB 개발",
+            "en": "UI, API, and database work on a new ordering product"
+          },
+          "context": {
+            "ko": "2026년 11월부터 사내 신규 주문 서비스 시제품을 동료 개발자 한 명과 함께 이어받아 개발하고 있습니다.",
+            "en": "Since November 2026, I have been developing an internal ordering-product prototype handed over to me and one other developer."
+          },
+          "work": {
+            "ko": [
+              "결제 상세 창과 할부 개월 저장을 React 화면, Express API, PostgreSQL 마이그레이션까지 구현해 main에 병합했습니다.",
+              "태블릿·휴대폰 주문을 구분하도록 주문 응답·웹훅·주방 주문표에 출처를 표시하고, 출처별 매출 집계를 위한 마이그레이션을 추가해 PR을 올렸습니다."
+            ],
+            "en": [
+              "Implemented payment details and installment-term persistence across the React UI, Express API, and PostgreSQL migrations, and merged the changes into main.",
+              "Opened a PR carrying tablet/mobile order-source information through responses, webhooks, and kitchen tickets, with a migration for sales totals by order source."
+            ]
+          },
+          "result": {
+            "ko": "개발 중인 시제품이며, 구형 Chromium 81과 Firefox 79·104에서 E2E 시나리오를 검증했습니다.",
+            "en": "The product remains under development. Validated E2E scenarios on older Chromium 81 and Firefox 79/104 browsers."
+          }
+        }
+      ],
+      "extraTitle": {
+        "ko": "실기기 검증과 그 밖의 작업",
+        "en": "Device validation and other work"
+      },
+      "extra": {
+        "ko": [
+          "ADB·GeckoView 원격 디버깅으로 실제 태블릿을 검증하는 E2E 도구를 만들었습니다. 로고가 없는 매장의 화면 반복 전환과 장바구니 확인창 오류를 재현·수정하고, 기기 검증과 회귀 테스트를 거쳐 릴리스 브랜치에 병합했습니다.",
+          "소켓 재연결 뒤 메시지 수신 채널(room)에 다시 가입하기까지 최대 30분 걸리는 원인과 주문·결제 상태 갱신에 미치는 영향을 조사해 대응 방안을 공유했습니다.",
+          "사용 매장이 없는 테마를 백엔드 담당자와 확인하고 미사용 코드 142개 파일, 약 17,500줄을 제거했습니다. Sentry 오류 필터와 프로젝트별 수신 한도, 일일 보고도 구성했습니다.",
+          "음료 추천 기능의 파일럿을 개발·배포하고, 매장별 추천 상품을 어드민에서 설정하도록 확장했습니다. 추천 화면이 늦거나 실패해도 주문을 계속할 수 있는지 확인했습니다."
+        ],
+        "en": [
+          "Built on-device E2E tooling with ADB and GeckoView remote debugging. Reproduced and fixed a screen loop in stores without a logo and a cart-dialog bug, then merged the fixes into the release branch after device checks and regression tests.",
+          "Investigated why rejoining a message room after socket reconnection could take up to 30 minutes, documented the effect on order/payment updates, and shared server and client response options.",
+          "Confirmed with backend developers that discontinued themes had no active stores, then removed about 17,500 lines across 142 unused files. Also configured Sentry filters, per-project intake limits, and daily reports.",
+          "Built and deployed a beverage-recommendation pilot, then added store-specific product configuration in the admin. Checked that ordering could continue when the recommendation screen was delayed or failed."
+        ]
+      }
+    },
+    {
+      "company": {
+        "ko": "Riad Corporation · Ria",
+        "en": "Riad Corporation · Ria"
+      },
+      "period": {
+        "ko": "2024.03 - 2025.09",
+        "en": "Mar 2024 - Sep 2025"
+      },
+      "role": {
+        "ko": "Frontend / Product Engineer",
+        "en": "Frontend / Product Engineer"
+      },
+      "meta": {
+        "ko": "Tech 팀 · 프론트엔드 개발 전담",
+        "en": "Tech team · Sole frontend engineer"
+      },
+      "summary": {
+        "ko": "호텔 견적·예약 서비스 Ria에서 여행사·여행객용 서비스와 호텔 담당자용 견적 관리 서비스의 프론트엔드를 전담했습니다. 기획·디자인·백엔드 담당자와 협업해 모바일 예약·결제로 확장하고, 사용자 행동 지표를 바탕으로 개선했습니다.",
+        "en": "Owned the frontend for Ria, a hotel quotation and booking service used by travel agencies, travelers, and hotel staff. Worked with product, design, and backend colleagues to expand into mobile booking and payment and improve the experience using behavioral metrics."
+      },
+      "projects": [
+        {
+          "title": {
+            "ko": "Ria의 호텔 견적 요청서에 선택형 입력 도입",
+            "en": "Guided input for Ria hotel quote requests"
+          },
+          "context": {
+            "ko": "고객이 채팅으로 여행 조건을 입력하면 AI가 요청서를 만들고 호텔 담당자가 견적을 보내는 화면을 개발했습니다. 자유 입력에서 무엇을 작성해야 할지 어려워하는 사용자가 있었습니다.",
+            "en": "Built screens where AI turns travelers’ chat input into quote requests and hotel staff respond with offers. Some users struggled to know what to enter in free-form chat."
+          },
+          "work": {
+            "ko": [
+              "Fetch 스트림으로 답변·요청서를 점진적으로 표시하고, 잘못되거나 누락된 모델 응답에 필드별 검증·재입력 안내·재시도를 추가했습니다.",
+              "기획·디자인·백엔드 담당자와 ‘바로 견적’·‘호텔 추천’ 경로를 구현했습니다. 12개 입력 항목을 호텔·여행객·조식으로 나누고, 작성 후 항목별 수정 기능을 제공했습니다."
+            ],
+            "en": [
+              "Used Fetch streams to display answers and request data incrementally, adding field validation, correction guidance, and retries for invalid or missing model output.",
+              "Worked with product, design, and backend colleagues on direct-quote and hotel-recommendation paths. Grouped 12 fields into hotel, traveler, and breakfast information, with per-field editing after generation."
+            ]
+          },
+          "result": {
+            "ko": "제품 이벤트 로그 기준으로 요청서 제출까지의 평균 작성 시간이 10분 초과에서 3분 이하로 줄었습니다.",
+            "en": "Product event logs showed average request-completion time falling from over ten minutes to three minutes or less, measured through request submission."
+          }
+        },
+        {
+          "title": {
+            "ko": "가입 장벽을 낮추기 위한 소셜 로그인 개발",
+            "en": "Social login to simplify signup"
+          },
+          "context": {
+            "ko": "가입 전환율이 떨어진 원인을 살피며, 소셜 로그인에 익숙한 사용자에게 이메일로만 가입해야 하는 점이 부담이라고 판단했습니다.",
+            "en": "While investigating falling signup conversion, identified email-only registration as a likely obstacle for users accustomed to social login."
+          },
+          "work": {
+            "ko": [
+              "제공사 정책과 API를 조사해 가입 정책을 정하고 Google·Kakao·Naver 로그인을 React 화면부터 Go 콜백·계정 API와 DB·Ent 스키마까지 구현했습니다.",
+              "소셜 로그인으로 받지 못하는 필수 정보만 추가 입력하도록 했습니다. 후속 개선에서는 로그인 전 경로·견적 정보를 보존하고 인앱 브라우저의 Google 로그인 안내를 추가했습니다."
+            ],
+            "en": [
+              "Researched provider policies and APIs, defined signup rules, and implemented Google, Kakao, and Naver login across React screens, Go callback/account APIs, and database/Ent schemas.",
+              "Requested only required information unavailable from providers. Later preserved the pre-login route and quote information and added guidance for Google login in in-app browsers."
+            ]
+          },
+          "result": {
+            "ko": "도입 후 주간 집계에서 신규 가입자의 75.83%가 소셜 로그인을 이용했습니다. 같은 시기 마케팅과 사업 방향도 바뀌어 가입자 증가를 도입 효과로 단정하지 않았습니다.",
+            "en": "In a weekly measurement after launch, 75.83% of new signups used social login. Marketing and business direction also changed, so I did not attribute overall signup growth solely to this feature."
+          }
+        },
+        {
+          "title": {
+            "ko": "모바일 호텔 검색·예약·결제 출시",
+            "en": "Mobile hotel search, booking, and payment"
+          },
+          "context": {
+            "ko": "여행사를 대상으로 한 초기 제품을 일반 여행객도 모바일에서 예약·결제할 수 있는 서비스로 확장했습니다.",
+            "en": "Expanded the initial travel-agency product so individual travelers could also book and pay on mobile."
+          },
+          "work": {
+            "ko": [
+              "최소 375px 너비의 검색·상세·견적·결제·예약 관리 화면을 개발했습니다. Google Maps와 목록을 연결하고 데스크톱 정보창과 모바일 바텀시트에서 호텔 정보 컴포넌트를 공유했습니다.",
+              "Stripe 초기 연동은 CTO님과 함께 진행하고 후속 화면·SDK 변경을 맡았습니다. 결제수단 노출 정책과 PG 선택을 분리하고 모바일 결제 전 입력·동의 정보를 저장해 복귀 후 결제 확인·예약 확정으로 연결했습니다."
+            ],
+            "en": [
+              "Built search, hotel details, quotes, payment, and booking management for widths from 375px. Linked Google Maps with listings and shared hotel information between desktop popups and mobile bottom sheets.",
+              "Integrated Stripe initially with the CTO and owned subsequent UI and SDK changes. Separated payment-method display policy from gateway selection, preserving input and consent through mobile redirects before payment verification and booking confirmation."
+            ]
+          },
+          "result": {
+            "ko": "모바일 예약·결제를 출시하고, 견적 요청·예약 생성 API 성공 뒤 GA4·Meta Pixel 이벤트를 보내도록 구현했습니다.",
+            "en": "Shipped mobile booking and payment, and sent GA4 and Meta Pixel events after quote-request and booking-creation APIs succeeded."
+          }
+        }
+      ],
+      "extraTitle": {
+        "ko": "제품 지표와 개발 환경 개선",
+        "en": "Product metrics and development workflow"
+      },
+      "extra": {
+        "ko": [
+          "DB에서 사용자 행동 지표를 조회해 기획자·디자이너와 하루 단위로 개선했습니다. 각 개선 전후 주간 집계에서 견적 확인율은 58.16%→90.63%, 비회원 견적 요청 전환율은 53.8%→62.35%로 높아졌습니다. 마케팅과 유입 변화가 함께 반영된 수치입니다.",
+          "CI 캐시 복원이 의존성 재설치보다 느린 것을 확인해 캐시를 제거하고 빌드 시간을 4분에서 1분으로 줄였습니다."
+        ],
+        "en": [
+          "Queried behavioral metrics from the database and iterated daily with product and design. Weekly measurements around separate improvements showed quote views rising from 58.16% to 90.63% and guest quote-request conversion from 53.8% to 62.35%. Marketing and acquisition changes also affected these figures.",
+          "Found CI cache restoration slower than dependency installation, removed the cache, and reduced build time from four minutes to one."
+        ]
+      }
+    },
+    {
+      "company": {
+        "ko": "라이트하우스",
+        "en": "Lighthouse"
+      },
+      "period": {
+        "ko": "2021.12 - 2023.01 / 2023.03 - 2024.01 (재입사)",
+        "en": "Dec 2021 - Jan 2023 / Mar 2023 - Jan 2024 (rejoined)"
+      },
+      "role": {
+        "ko": "Frontend Engineer",
+        "en": "Frontend Engineer"
+      },
+      "meta": {
+        "ko": "개발팀",
+        "en": "Engineering team"
+      },
+      "summary": {
+        "ko": "돌봄 기관과 보호자가 쓰는 웹 서비스를 개발·운영하고, 패밀리케어에서 요구사항 정리·업무 분배·일정 산정·PR 리뷰를 맡았습니다.",
+        "en": "Built and operated web services for care facilities and families. On FamilyCare, handled requirements, task allocation, estimates, and PR reviews."
+      },
+      "projects": [],
+      "extraTitle": {
+        "ko": "주요 작업",
+        "en": "Key work"
+      },
+      "extra": {
+        "ko": [
+          "키즈노트와 협업한 패밀리케어에서 업무 로직과 UI를 분리하고 사용자 유형별 메뉴 권한·Canvas 전자서명·외부 CMS 연동을 구현했습니다. CI 중복 설치 단계를 통합해 실행 시간을 7분에서 5분으로 줄였습니다.",
+          "데일리북의 API 데이터 처리를 Redux Saga에서 React Query로 옮겨 요청·캐시·갱신을 훅으로 관리했습니다. 미사용 라이브러리를 제거해 번들을 1.78MB에서 1.47MB로 줄였습니다.",
+          "Naver Maps 기반 묘지 매칭 서비스 장지헬프콜을 단독 개발·출시했습니다. 오늘케어의 SPA 전환과 TypeScript·Sentry 도입을 진행했습니다.",
+          "수료한 항해99 부트캠프에 멘토로 돌아가 회사 업무와 함께 React 수강생을 멘토링했습니다(2022.11-12)."
+        ],
+        "en": [
+          "On FamilyCare, developed with KidsNote, separated business logic from UI and implemented role-based menus, canvas e-signatures, and an external CMS integration. Consolidated repeated CI installation steps, reducing runtime from seven minutes to five.",
+          "Moved Dailybook’s API data handling from Redux Saga to React Query hooks for requests, caching, and updates. Removed unused libraries, reducing its bundle from 1.78MB to 1.47MB.",
+          "Independently built and launched Jangji-Helpcall, a burial-site matching service using Naver Maps. Migrated TodayCare to an SPA and introduced TypeScript and Sentry.",
+          "Returned to Hanghae99 as a mentor after graduating, coaching React students alongside my full-time role (Nov-Dec 2022)."
+        ]
+      }
+    }
+  ],
+  "skills": [
+    {
+      "title": {
+        "ko": "프론트엔드",
+        "en": "Frontend"
+      },
+      "items": {
+        "ko": "React · TypeScript · Vue 3 · TanStack Query · React Hook Form · React Native / Expo",
+        "en": "React · TypeScript · Vue 3 · TanStack Query · React Hook Form · React Native / Expo"
+      }
+    },
+    {
+      "title": {
+        "ko": "API·DB 연동",
+        "en": "APIs and databases"
+      },
+      "items": {
+        "ko": "Go·Ent, Express·PostgreSQL 기반 기능 개발 · OAuth · postMessage · Fetch 스트림",
+        "en": "Feature development with Go/Ent and Express/PostgreSQL · OAuth · postMessage · Fetch streams"
+      }
+    },
+    {
+      "title": {
+        "ko": "품질·운영",
+        "en": "Quality and operations"
+      },
+      "items": {
+        "ko": "Vitest · Playwright · MSW · ADB · GeckoView · OpenSearch · Sentry · GitHub Actions",
+        "en": "Vitest · Playwright · MSW · ADB · GeckoView · OpenSearch · Sentry · GitHub Actions"
+      }
+    },
+    {
+      "title": {
+        "ko": "AI 활용",
+        "en": "AI tooling"
+      },
+      "items": {
+        "ko": "Claude Code 스킬·플러그인 · MCP · BM25 검색 · AI 코딩 도구를 활용한 Python 봇 개발·운영",
+        "en": "Claude Code skills/plugins · MCP · BM25 retrieval · Python bot development and operation with AI coding tools"
+      }
+    }
+  ],
+  "sideProjects": [
+    {
+      "title": {
+        "ko": "싹 · 습관 트래커",
+        "en": "Ssak · Habit Tracker"
+      },
+      "description": {
+        "ko": "습관 기록 앱을 iOS·Android에 출시하고 업데이트하고 있습니다. 기기 내 저장·알림·위젯과 백업·복원 기능을 개발했으며, Instagram에서 앱을 홍보하고 있습니다.",
+        "en": "Built and continue to update a habit-tracking app for iOS and Android, including local storage, notifications, widgets, and backup/restore. I also promote it on Instagram."
+      },
+      "links": [
+        {
+          "label": "App Store",
+          "url": "https://apps.apple.com/app/id6762334017"
+        },
+        {
+          "label": "Google Play",
+          "url": "https://play.google.com/store/apps/details?id=com.qlemql.minimalhabittracker"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/qlemql/minimal-habit-tracker"
+        }
+      ]
+    },
+    {
+      "title": {
+        "ko": "여우와 산책",
+        "en": "Fox Walk"
+      },
+      "description": {
+        "ko": "걸은 만큼 여우가 자라는 산책 앱을 iOS·Android에 출시했습니다. 걸음 수·날씨·위젯을 연결하고, 출시 후 팝업이 반복되거나 알림과 저장이 실패하는 문제를 수정했습니다.",
+        "en": "Launched an iOS and Android walking app where a fox grows as the user walks. Connected step counts, weather, and widgets, then fixed repeated popups and notification/storage failures after launch."
+      },
+      "links": [
+        {
+          "label": "App Store",
+          "url": "https://apps.apple.com/app/id6822642908"
+        },
+        {
+          "label": "Google Play",
+          "url": "https://play.google.com/store/apps/details?id=com.foxwalk.app"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": {
+        "ko": "가톨릭관동대학교",
+        "en": "Catholic Kwandong University"
+      },
+      "detail": {
+        "ko": "중국학전공 졸업 · 2013.03 - 2019.08",
+        "en": "BA in Chinese Studies · Mar 2013 - Aug 2019"
+      }
+    },
+    {
+      "title": {
+        "ko": "항해99 부트캠프",
+        "en": "Hanghae99 Bootcamp"
+      },
+      "detail": {
+        "ko": "스파르타코딩클럽 · 2021.06 - 2021.09",
+        "en": "Sparta Coding Club · Jun-Sep 2021"
+      }
+    }
+  ]
+}

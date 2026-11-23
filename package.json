@@ -1,0 +1,6 @@
+{
+  "name": "taehyun-public-resume",
+  "private": true,
+  "type": "module",
+  "scripts": { "build": "node scripts/build.mjs" }
+}
